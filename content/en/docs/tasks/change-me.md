@@ -3,7 +3,7 @@ title: "Razorpay"
 linkTitle: "Short Nav Title"
 weight: 100
 description: >-
-     Page description for heading and indexes.
+     Razorpay payment gateway with redirection_in_js
 ---
 
 ## Heading
