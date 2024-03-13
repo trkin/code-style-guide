@@ -16,7 +16,17 @@ end
 
 tax = tax(100) # Don't do this since you will override the method
 ```
-But is the method is from other classes you might use
+Also do not use the same name with local variable
+```
+def tax(amount)
+  amount * 0.20
+end
+
+def add(tax) # Don't use the same name for argument since you will override the existing method
+  tax + 1
+end
+```
+But if the method is from other class, in this case you can use same name
 ```
 class Calculate
   def initialize(percentage)
