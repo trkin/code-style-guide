@@ -40,3 +40,32 @@ end
 tax = Calculate.new(0.20).tax(100) # This is OK since we do not override the method
 ```
 
+### Do not compare with string
+
+Instead of
+```
+dog = "Daki"
+
+if dog == "Daki" # Don't compare with string
+  puts "Dog is Daki"
+end
+```
+better is to use CONST
+```
+DAKI = "Daki
+
+if dog == DAKI # OK to compare with const
+```
+If you have a lot of constants you can create another class for it
+```
+class Const
+  def self.daki
+    "Daki"
+  end
+end
+
+if dog == Const.daki  # OK
+```
+Using constants and methods, you do not need to think about case (if it is "Daki" or "daki")
+and any syntax error will be visible (`Const.daik` will raise an error)
+
