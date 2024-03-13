@@ -8,7 +8,7 @@ description: >-
 ### Do not mix ternary operator and if statement
 ```
 if a == true
-  b == true ? "Yes" : "No" # Don't mix both
+  b == true ? "Yes" : "No" # Don't mix both "if" and "? : "
 end
 
 a == true ? "Yes" : "No" if b == true # Don't. This is event more complicated since output is "Yes" "No" and nil
