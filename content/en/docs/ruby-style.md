@@ -5,8 +5,12 @@ description: >-
      Tips for better Ruby code
 ---
 
-## Ruby
+# Do not mix ternary operator and if statement
+```
+a == true ? "Yes" : "No" if b == true # Don't mix both
 
+a == true && b == true ? "Yes" : "No" # OK
+```
 ### Do not use same variable name as method name
 
 ```
