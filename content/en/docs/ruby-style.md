@@ -7,9 +7,19 @@ description: >-
 
 # Do not mix ternary operator and if statement
 ```
-a == true ? "Yes" : "No" if b == true # Don't mix both
+if a == true
+  b == true ? "Yes" : "No" # Don't mix both
+end
 
-a == true && b == true ? "Yes" : "No" # OK
+a == true ? "Yes" : "No" if b == true # Don't. This is event more complicated since output is "Yes" "No" and nil
+
+a == true && b == true ? "Yes" : "No" # OK to use only ternary
+
+if a == true && b == true # OK, this is much more readable
+  "Yes"
+else
+  "No"
+end
 ```
 ### Do not use same variable name as method name
 
