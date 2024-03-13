@@ -5,7 +5,7 @@ description: >-
      Tips for better Ruby code
 ---
 
-# Do not mix ternary operator and if statement
+### Do not mix ternary operator and if statement
 ```
 if a == true
   b == true ? "Yes" : "No" # Don't mix both
