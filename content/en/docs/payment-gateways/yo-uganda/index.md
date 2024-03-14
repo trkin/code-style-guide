@@ -14,3 +14,8 @@ you can find keys on [API Access Details](https://payments.yo.co.ug/ybs/portal/i
 
 
 ![](yo_copy_keys.jpg)
+
+
+## Whitelist IP Address
+
+You need to send email to support@yo .... with request to allow our server IP address 1.2.3.4
