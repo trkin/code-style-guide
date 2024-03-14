@@ -6,7 +6,7 @@ description: >-
      Yo Uganda Payment Gateway Configuration
 ---
 
-## Account
+## Keys
 
 After log in on 
 [https://payments.yo.co.ug/ybs/portal/](https://payments.yo.co.ug/ybs/portal/)
