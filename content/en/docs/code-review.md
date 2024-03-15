@@ -1,6 +1,6 @@
 ---
 title: "Code review"
-linkTitle: "Code review
+linkTitle: "Code review"
 weight: 3
 description: >-
      How to communicate using Pull Requests
