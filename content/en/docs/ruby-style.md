@@ -83,3 +83,21 @@ if dog == Const.daki  # OK
 Using constants and methods, you do not need to think about case (if it is "Daki" or "daki")
 and any syntax error will be visible (`Const.daik` will raise an error)
 
+### Use bang method when you do not check the result
+
+Instead of
+```
+user.save
+```
+use
+```
+user.save!
+```
+or
+```
+if user.save
+  # do something
+else
+  # do something
+end
+```
