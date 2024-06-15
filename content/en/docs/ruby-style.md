@@ -101,3 +101,17 @@ else
   # do something
 end
 ```
+
+### In ERB do not use data: { param: value } attribute, use "data-param": value
+
+Instead of
+```
+<%= button_tag :name, data: { some_param: "123" } %>
+
+# which generates
+<button name="button" type="submit" data-some-param="123">name</button>
+```
+use
+```
+<%= button_tag :name, "data-some-param": "123" %>
+```
