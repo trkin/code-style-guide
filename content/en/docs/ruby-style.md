@@ -104,14 +104,16 @@ end
 
 ### In ERB do not use data: { param: value } attribute, use "data-param": value
 
-Instead of
+To generate
+```
+<button name="button" type="submit" data-some-param="123">name</button>
+```
+Instead of using `data:` attributes
 ```
 <%= button_tag :name, data: { some_param: "123" } %>
-
-# which generates
-<button name="button" type="submit" data-some-param="123">name</button>
 ```
 use
 ```
 <%= button_tag :name, "data-some-param": "123" %>
 ```
+because it is easer to find when we search `data-some-param` in the code
