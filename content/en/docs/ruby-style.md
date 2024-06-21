@@ -117,3 +117,39 @@ use
 <%= button_tag :name, "data-some-param": "123" %>
 ```
 because it is easer to find when we search `data-some-param` in the code
+
+### Do not use Active Record Callbacks for external API calls or other complex logic
+
+Instead of
+```
+# app/models/user.rb
+class User < ApplicationRecord
+  validate :check_api
+  before_save :check_api
+
+  def check_api
+    HTTP
+  end
+end
+
+# in controller
+user.save
+```
+we should avoud callbacks and other complex logic and use method to explicity call when needed
+```
+# app/models/user.rb
+class User < ApplicationRecord
+  def save_and_check_api
+    return unless save
+    check_api
+  end
+
+  def check_api
+    HTTP
+  end
+end
+
+# in controller
+user.save_and_check_api
+```
+since in this case we can use `user.save!` without fear that we will break because of invalid objects
