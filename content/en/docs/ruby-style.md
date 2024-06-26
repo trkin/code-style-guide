@@ -153,3 +153,23 @@ end
 user.save_and_check_api
 ```
 since in this case we can use `user.save!` without fear that we will break because of invalid objects
+
+### Order in Rails model
+
+Since a lot of code is in models, we should agree for the following order
+
+1. `include` and `extend` other modules, or methods from gems like: `devise`, `has_paper_trail`, `acts_as_list scope:`
+1. `FIELDS = %i[name].freeze` and other constants
+1. `enum status: %i[draft accepted]` enums
+1. `attr_accessor` or `serialize :col, Hash`
+1. `belongs_to :workflow` 
+1.  `has_many :users` or `has_one :attached` associations
+1. validations `validates :name, presence: true`
+1. validate declarations `validate :_check_nested_resource`
+1. callbacks declarations `before_validation :_default_values_on_create, on: :create`
+1. scopes `scope :by_status_param, ->(status_argument) { where status: status_argument }`
+1. class methods `def self.find_first_unpublished`
+1. instance methods `def full_name`
+1. validate definitions `def _check_nested_resource`
+1. callbacks definitions `def _default_values_on_create`
+
