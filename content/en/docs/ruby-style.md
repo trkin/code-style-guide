@@ -168,8 +168,9 @@ Since a lot of code is in models, we should agree for the following order
 1. validate declarations `validate :_check_nested_resource`
 1. callbacks declarations `before_validation :_default_values_on_create, on: :create`
 1. scopes `scope :by_status_param, ->(status_argument) { where status: status_argument }`
-1. class methods `def self.find_first_unpublished`
-1. instance methods `def full_name`
+1. class methods `def self.find_first_unpublished` (move to e.g. `app/queries/posts_query.rb`)
 1. validate definitions `def _check_nested_resource`
 1. callbacks definitions `def _default_values_on_create`
+1. instance methods `def full_name`
+
 
