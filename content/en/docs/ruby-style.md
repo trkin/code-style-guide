@@ -21,6 +21,23 @@ else
   "No"
 end
 ```
+
+### Rubocop styles
+
+```
+# put comma after each line [1,]
+Style/TrailingCommaInArrayLiteral:
+  Enabled: false
+
+# put comma after each line {a:1,}
+Style/TrailingCommaInHashLiteral:
+  Enabled: false
+
+# also in arguments
+Style/TrailingCommaInArguments:
+  Enabled: false
+```
+
 ### Do not use same variable name as method name
 
 ```
