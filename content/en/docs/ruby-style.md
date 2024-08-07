@@ -25,6 +25,7 @@ end
 ### Rubocop styles
 
 ```
+# .rubocop.yml
 # put comma after each line [1,]
 Style/TrailingCommaInArrayLiteral:
   Enabled: false
