@@ -22,6 +22,27 @@ else
 end
 ```
 
+### After return or raise always add empty line
+
+```
+# bad, it if hard to see places for return
+def name_upcase
+  raise "NoName" if @name.blank
+  return "ADMIN" if @name == "admin"
+  @name.uppcase
+end
+```
+
+```
+# good, it is easier to see early return from block
+def name_upcase
+  raise "NoName" if @name.blank
+  return "ADMIN" if @name == "admin"
+
+  @name.uppcase
+end
+```
+
 ### Rubocop styles
 
 ```
