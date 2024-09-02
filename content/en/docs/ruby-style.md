@@ -213,3 +213,8 @@ Since a lot of code is in models, we should agree for the following order
 1. instance methods `def full_name`
 
 
+### Separate pull request for indent and other syntax changes
+
+It is hard to see changed lines if commit contains a lot of syntax corrections (indent, rename var names...).
+It is better to use separate PR for those simple changes, and continue with original PR based on that.
+
