@@ -93,7 +93,7 @@ end
 tax = Calculate.new(0.20).tax(100) # This is OK since we do not override the method
 ```
 
-### Do not compare with string
+### Do not compare with string and number, use Constants
 
 Instead of
 ```
