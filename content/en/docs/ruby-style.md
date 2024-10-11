@@ -157,6 +157,20 @@ use
 ```
 because it is easer to find when we search `data-some-param` in the code
 
+### Naming is important, use snake_case of class CamelCase
+
+Instead
+```
+# wrong
+form = RegisterForm.new
+user = LocationUser.last
+```
+use full name
+```
+register_form = RegisterForm.new
+location_user = LocationUser.last
+```
+
 ### Do not use Active Record Callbacks for external API calls or other complex logic
 
 Instead of
