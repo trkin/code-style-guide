@@ -34,3 +34,9 @@ In order to receive webhooks we need to call API to "add c2b register url". Clic
 In Sandbox mode you can "Mpesa add c2b register url" multiple times, but in production mode, you need to contact MPesa api support to clear old
 confirmation and validation URL and than select "Mpesa add c2b register url" and save, and contact MPesa api support to enable newly 
 added URLs.
+
+A short code is the unique number that is allocated to an organization through which they will be able to receive customer payment. It could be a Pay bill, Buy Goods or Till Number. 
+
+You can apply for a short code via [https://m-pesaforbusiness.co.ke/apply](https://m-pesaforbusiness.co.ke/apply)
+
+Passkey is sent to the developer account email address once the customer completes the Go Live process on Daraja.
