@@ -8,6 +8,8 @@ description: >-
 
 ## Setup
 
+Read documentation [https://developer.safaricom.co.ke/Documentation](https://developer.safaricom.co.ke/Documentation)
+
 On Mpesa MyApps page [https://developer.safaricom.co.ke/MyApps](https://developer.safaricom.co.ke/MyApps) click on "CREATE NEW APP",
 use arbitrary name, select ALL products and click on "CREATE APP".
 ![Screenshot 2024-10-15 at 17 17 09](https://github.com/user-attachments/assets/8e58369c-e1cd-4ea9-9cc3-8e61c48ef88a)
