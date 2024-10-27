@@ -178,7 +178,7 @@ Instead of
 # app/models/user.rb
 class User < ApplicationRecord
   validate :check_api
-  before_save :check_api
+  before_save :check_api # wrong, it will call api on each save
 
   def check_api
     HTTP
@@ -206,6 +206,21 @@ end
 user.save_and_check_api
 ```
 since in this case we can use `user.save!` without fear that we will break because of invalid objects
+
+### Always keep active record objects instead of ruby arrays
+
+We should try to delay the sql query until the end, for example:
+instead of two queries (one for Book and one for User) and books_id could be very big ruby array object
+```
+public_books_ids = Book.public.pluck :id
+user_without_public_books = User.where.not(id: public_books_ids) # wrong, we have two queries
+```
+we should use `.select` (returns ActiveRecord Relation) instead of `.pluck` (perform sql query and returns Array)
+```
+public_books_ids = Book.public.select :id
+user_without_public_books = User.where.not(id: public_books_ids)
+```
+
 
 ### Order in Rails model
 
