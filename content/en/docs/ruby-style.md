@@ -221,6 +221,23 @@ public_books_ids = Book.public.select :id
 user_without_public_books = User.where.not(id: public_books_ids)
 ```
 
+### Use Model.create instead of association user.models.create
+
+Instead of
+```
+# wrong since we can not search for Book.create
+book = user.books.create(
+  title: "My title"
+)
+```
+use capitalized model name so we can search all places where we have `Book.create`
+```
+# ok
+book = Book.create(
+  user: user,
+  title: "My Title",
+)
+```
 
 ### Order in Rails model
 
