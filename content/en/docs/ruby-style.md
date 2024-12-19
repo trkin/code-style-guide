@@ -21,6 +21,23 @@ else
   "No"
 end
 ```
+### No need to use if  ... raise
+
+```
+# bad, no need to indent
+if STATUSES.include? params[:status]
+  perform params[:status]
+else
+  raise "invalid status #{params[:status]}"
+end
+```
+
+```
+# it is more readable and usually no need to write test case
+raise "invalid status #{params[:status]}" unless STATUSES.include? params[:status]
+
+perform params[:status]
+```
 
 ### After return or raise always add empty line
 
