@@ -258,6 +258,24 @@ Since a lot of code is in models, we should agree for the following order
 1. callbacks definitions `def _default_values_on_create`
 1. instance methods `def full_name`
 
+### When to use sql when ActiveRecord
+
+Use ActiveRecord relation when possible, but do not iterate objects if you can update in one sql command.
+Do not use update_all when there are validations or callbacks
+https://api.rubyonrails.org/v8.0.1/classes/ActiveRecord/Relation.html#method-i-update_all
+> It does not instantiate the involved models and it does not trigger Active Record callbacks or validations.
+ 
+```
+# wrong
+User.where(active: true).find_each do |user|
+  user.update! status: 'enabled'
+end
+
+# ok, one sql
+User.where(active: true).update_all(status: :enabled)
+
+# make sure that there is no validation or callbacks on updated field 
+```
 
 ### Separate pull request for indent and other syntax changes
 
