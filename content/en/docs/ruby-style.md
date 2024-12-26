@@ -5,6 +5,11 @@ description: >-
      Tips for better Ruby code
 ---
 
+### Clear about input and output of code
+
+For example do not use params, session, and other ways to pass the state
+
+
 ### Do not mix ternary operator and if statement
 ```
 if a == true
